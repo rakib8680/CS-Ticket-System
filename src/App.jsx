@@ -1,6 +1,9 @@
 import Navbar from "./components/Navbar/Navbar";
 import StatusCards from "./components/Banner/StatusCards";
-import TicketSection from "./tickets/TicketSection";
+import { Suspense } from "react";
+import Main from "./tickets/Main";
+
+const TicketsPromise = fetch("/tickets.json").then((res) => res.json());
 
 const App = () => {
   return (
@@ -8,7 +11,9 @@ const App = () => {
       <Navbar />
       <div className="container mx-auto">
         <StatusCards />
-        <TicketSection />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Main ticketsPromise={TicketsPromise} />
+        </Suspense>
       </div>
     </div>
   );
