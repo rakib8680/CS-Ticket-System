@@ -1,9 +1,10 @@
+import Navbar from "./components/Navbar/Navbar";
+
 const App = () => {
   return (
-    <div>
-      <h1>This is App component</h1>
-      <button class="btn">Button</button>
-      <button class="btn w-64 rounded-full">Button</button>
+    <div className="bg-[#f5f5f5] min-h-screen">
+      <Navbar />
+      <div className="container mx-auto"></div>
     </div>
   );
 };
