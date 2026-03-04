@@ -59,7 +59,7 @@ const Navbar = () => {
 
           {/* Right - Nav Links + Button */}
           <div className="navbar-end gap-4">
-            <ul className="menu menu-horizontal px-1 text-sm hidden lg:flex gap-4">
+            <ul className="menu menu-horizontal px-1 text-sm hidden lg:flex gap-4 flex-nowrap">
               <li>
                 <a>Home</a>
               </li>
