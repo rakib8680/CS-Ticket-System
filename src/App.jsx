@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import TicketSkeleton from "./Tickets/TicketSkeleton";
 import Main from "./Tickets/Main";
 import Footer from "./components/Footer/Footer";
+import { Toaster, toast } from "sonner";
 
 const TicketsPromise = fetch("/tickets.json").then((res) => res.json());
 
@@ -19,15 +20,18 @@ const App = () => {
     };
 
     if (selectedTickets.find((t) => t.id === ticketPayload.id)) {
+      toast.error(`Ticket ${ticket.id} already in Task Status`);
       return;
     }
     setSelectedTickets([...selectedTickets, ticketPayload]);
+    toast.success(`Ticket ${ticket.id} added to Task Status`);
   };
   // handle resolve ticket
   const handleResolveTicket = (ticket) => {
     const updatedTickets = selectedTickets.filter((t) => t.id !== ticket.id);
     setSelectedTickets(updatedTickets);
     setResolvedTickets([...resolvedTickets, ticket]);
+    toast.success(`Ticket ${ticket.id} Resolved`);
   };
 
   return (
@@ -49,6 +53,7 @@ const App = () => {
         </Suspense>
       </div>
       <Footer />
+      <Toaster position="bottom-right" richColors />
     </div>
   );
 };
