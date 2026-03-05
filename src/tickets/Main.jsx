@@ -5,7 +5,7 @@ import TaskSection from "./TaskSection";
 const Main = ({ ticketsPromise }) => {
   const tickets = use(ticketsPromise);
   return (
-    <div>
+    <div className="pb-20">
       <div className="grid grid-cols-12 gap-7">
         <div className="col-span-9">
           <TicketSection tickets={tickets} />

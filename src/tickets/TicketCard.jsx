@@ -19,16 +19,8 @@ const TicketCard = ({ ticket }) => {
     ticket || {};
 
   const statusStyle = statusStyles[status] || statusStyles.OPEN;
-  const date = createdAt
-    ? new Date(createdAt).toLocaleDateString("en-US", {
-        month: "numeric",
-        day: "numeric",
-        year: "numeric",
-      })
-    : "";
-
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-5">
+    <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-[#40586d] transition-all duration-200">
       {/* Title + Status */}
       <div className="flex justify-between items-start mb-3">
         <h2 className="text-[#2d3748] text-lg font-bold pr-4">{title}</h2>
@@ -69,7 +61,7 @@ const TicketCard = ({ ticket }) => {
               <rect x="3" y="4" width="18" height="18" rx="2" strokeWidth="2" />
               <path d="M16 2v4M8 2v4M3 10h18" strokeWidth="2" />
             </svg>
-            <span>{date}</span>
+            <span>{createdAt}</span>
           </div>
         </div>
       </div>
