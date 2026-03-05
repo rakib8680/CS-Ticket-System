@@ -12,7 +12,7 @@ const Main = ({
   const tickets = use(ticketsPromise);
   return (
     <div className="pb-20">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-7">
+      <div className="flex flex-col-reverse md:grid md:grid-cols-12 gap-7">
         <div className="md:col-span-9">
           <TicketSection
             tickets={tickets}

@@ -18,15 +18,21 @@ const TicketSection = ({
       <h1 className="text-[#40586d] text-2xl font-medium mb-3">
         Customer Tickets
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {reamainingTickets.map((ticket) => (
-          <TicketCard
-            key={ticket.id}
-            ticket={ticket}
-            handleTicketClick={handleTicketClick}
-          />
-        ))}
-      </div>
+      {reamainingTickets.length === 0 ? (
+        <p className="text-[#40586d]  md:text-2xl  text-center mb-3 min-h-[30vh] md:min-h-[50vh] flex items-center justify-center">
+          No Tickets Found
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {reamainingTickets.map((ticket) => (
+            <TicketCard
+              key={ticket.id}
+              ticket={ticket}
+              handleTicketClick={handleTicketClick}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
