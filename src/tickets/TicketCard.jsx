@@ -14,16 +14,19 @@ const statusStyles = {
   CLOSED: { bg: "bg-gray-200", dot: "bg-gray-500", text: "Closed" },
 };
 
-const TicketCard = ({ ticket }) => {
+const TicketCard = ({ ticket, handleTicketClick }) => {
   const { id, title, description, customer, priority, status, createdAt } =
     ticket || {};
 
   const statusStyle = statusStyles[status] || statusStyles.OPEN;
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-[#40586d] transition-all duration-200">
+    <div
+      onClick={() => handleTicketClick(ticket)}
+      className="bg-white rounded-xl border border-gray-200 p-5 cursor-pointer hover:border-[#40586d] transition-all duration-200"
+    >
       {/* Title + Status */}
       <div className="flex justify-between items-start mb-3">
-        <h2 className="text-[#2d3748] text-lg font-bold pr-4">{title}</h2>
+        <h2 className="text-[#2d3748] text-lg font-semibold pr-4">{title}</h2>
         <span
           className={`${statusStyle.bg} flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap`}
         >
@@ -44,7 +47,7 @@ const TicketCard = ({ ticket }) => {
         <div className="flex items-center gap-4">
           <span className="text-gray-500 font-semibold">{id}</span>
           <span
-            className={`${priorityColors[priority]} font-bold text-xs tracking-wide`}
+            className={`${priorityColors[priority]} font-semibold text-xs tracking-wide`}
           >
             {priority} PRIORITY
           </span>

@@ -2,16 +2,19 @@ import { use } from "react";
 import TicketSection from "./TicketSection";
 import TaskSection from "./TaskSection";
 
-const Main = ({ ticketsPromise }) => {
+const Main = ({ ticketsPromise, handleTicketClick, selectedTickets }) => {
   const tickets = use(ticketsPromise);
   return (
     <div className="pb-20">
       <div className="grid grid-cols-12 gap-7">
         <div className="col-span-9">
-          <TicketSection tickets={tickets} />
+          <TicketSection
+            tickets={tickets}
+            handleTicketClick={handleTicketClick}
+          />
         </div>
         <div className="col-span-3">
-          <TaskSection />
+          <TaskSection selectedTickets={selectedTickets} />
         </div>
       </div>
     </div>

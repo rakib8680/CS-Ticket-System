@@ -23,10 +23,14 @@ const StatusCard = ({ title, count, gradient }) => {
   );
 };
 
-const StatusCards = () => {
+const StatusCards = ({ selectedTickets }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-20">
-      <StatusCard title="In-Progress" count={0} gradient="#632EE3, #9F62F2" />
+      <StatusCard
+        title="In-Progress"
+        count={selectedTickets}
+        gradient="#632EE3, #9F62F2"
+      />
       <StatusCard title="Resolved" count={0} gradient="#54CF68, #00827A" />
     </div>
   );
