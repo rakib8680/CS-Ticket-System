@@ -1,5 +1,4 @@
 const Resolved = ({ resolvedTickets }) => {
-  console.log(resolvedTickets);
   return (
     <div>
       <h1 className="text-[#40586d] text-2xl font-medium mb-3">

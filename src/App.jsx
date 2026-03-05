@@ -3,6 +3,7 @@ import StatusCards from "./components/Banner/StatusCards";
 import { Suspense, useState } from "react";
 import TicketSkeleton from "./Tickets/TicketSkeleton";
 import Main from "./Tickets/Main";
+import Footer from "./components/Footer/Footer";
 
 const TicketsPromise = fetch("/tickets.json").then((res) => res.json());
 
@@ -22,7 +23,7 @@ const App = () => {
     }
     setSelectedTickets([...selectedTickets, ticketPayload]);
   };
-
+  // handle resolve ticket
   const handleResolveTicket = (ticket) => {
     const updatedTickets = selectedTickets.filter((t) => t.id !== ticket.id);
     setSelectedTickets(updatedTickets);
@@ -47,6 +48,7 @@ const App = () => {
           />
         </Suspense>
       </div>
+      <Footer />
     </div>
   );
 };
