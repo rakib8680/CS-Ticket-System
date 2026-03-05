@@ -1,8 +1,8 @@
 import Navbar from "./components/Navbar/Navbar";
 import StatusCards from "./components/Banner/StatusCards";
 import { Suspense, useState } from "react";
-import Main from "./tickets/Main";
 import TicketSkeleton from "./Tickets/TicketSkeleton";
+import Main from "./Tickets/Main";
 
 const TicketsPromise = fetch("/tickets.json").then((res) => res.json());
 
