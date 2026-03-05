@@ -25,7 +25,7 @@ const StatusCard = ({ title, count, gradient }) => {
 
 const StatusCards = ({ selectedTickets, resolvedTickets }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 md:my-20">
       <StatusCard
         title="In-Progress"
         count={selectedTickets}

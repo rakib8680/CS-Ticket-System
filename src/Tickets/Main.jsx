@@ -12,14 +12,16 @@ const Main = ({
   const tickets = use(ticketsPromise);
   return (
     <div className="pb-20">
-      <div className="grid grid-cols-12 gap-7">
-        <div className="col-span-9">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-7">
+        <div className="md:col-span-9">
           <TicketSection
             tickets={tickets}
             handleTicketClick={handleTicketClick}
+            selectedTickets={selectedTickets}
+            resolvedTickets={resolvedTickets}
           />
         </div>
-        <div className="col-span-3">
+        <div className="md:col-span-3">
           <TaskSection
             selectedTickets={selectedTickets}
             handleResolveTicket={handleResolveTicket}

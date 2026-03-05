@@ -13,7 +13,7 @@ const SkeletonCard = () => (
     </div>
 
     {/* Footer: ID, Priority, Customer, Date */}
-    <div className="flex items-center justify-between">
+    <div className="flex flex-wrap items-center justify-between gap-3 md:gap-0">
       <div className="flex items-center gap-4">
         <div className="skeleton h-4 w-14"></div>
         <div className="skeleton h-4 w-28"></div>
@@ -29,11 +29,11 @@ const SkeletonCard = () => (
 const TicketSkeleton = () => {
   return (
     <div className="pb-20">
-      <div className="grid grid-cols-12 gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-7">
         {/* Ticket Section */}
-        <div className="col-span-9">
+        <div className="md:col-span-9">
           <div className="skeleton h-8 w-52 mb-3"></div>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {Array.from({ length: 6 }).map((_, i) => (
               <SkeletonCard key={i} />
             ))}
@@ -41,7 +41,7 @@ const TicketSkeleton = () => {
         </div>
 
         {/* Task Section */}
-        <div className="col-span-3">
+        <div className=" md:col-span-3">
           <div className="mb-10">
             <div className="skeleton h-8 w-36 mb-3"></div>
             <div className="skeleton h-3 w-52"></div>
